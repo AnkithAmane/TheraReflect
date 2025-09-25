@@ -1,0 +1,157 @@
+/* Custom CSS for TheraReflect */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 15px 15px 0 0 !important;
+    font-weight: 600;
+}
+
+.btn {
+    border-radius: 25px;
+    font-weight: 500;
+    padding: 10px 25px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    border: none;
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.display-4 {
+    font-weight: 300;
+    color: #495057;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #6c757d;
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 10px !important;
+    margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+.list-group-item.active {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+}
+
+/* Dashboard specific styles */
+.display-6 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Signup form toggle styles */
+.signup-form {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-check:checked+.btn {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for page load */
+.card {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom colors for different user types */
+.patient-theme {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+}
+
+.therapist-theme {
+    --primary-color: #28a745;
+    --secondary-color: #6c757d;
+}
+
+/* Loading spinner */
+.spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+}
