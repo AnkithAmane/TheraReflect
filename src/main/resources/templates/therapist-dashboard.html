@@ -6,27 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Therapist Dashboard - TheraReflect</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="/">TheraReflect</a>
             <div class="navbar-nav ms-auto">
-                <span class="navbar-text me-3">Welcome, Dr. <span th:text="${therapist.name}"></span>!</span>
+                <span class="navbar-text me-3">Welcome, Dr. Therapist!</span>
                 <a class="nav-link" href="/logout">Logout</a>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-3">
+    <div class="container py-4">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-4">
                 <!-- Sidebar -->
                 <div class="card">
-                    <div class="card-header">
-                        <h5>Navigation</h5>
+                    <div class="card-header bg-primary text-white">
+                        <h5><i class="bi bi-briefcase me-2"></i>Navigation</h5>
                     </div>
                     <div class="list-group list-group-flush">
                         <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
@@ -39,139 +40,238 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-lg-9 col-md-8">
                 <!-- Main Content -->
                 <div class="row">
                     <div class="col-12">
-                        <h2>Therapist Dashboard</h2>
-                        <p class="text-muted">Manage your practice and help patients on their mental health journey</p>
+                        <h2 class="text-primary mb-4">
+                            <i class="bi bi-clipboard2-pulse me-3"></i>Therapist Dashboard
+                        </h2>
                     </div>
                 </div>
 
-                <!-- Stats Cards -->
-                <div class="row mt-4">
-                    <div class="col-md-3 mb-3">
-                        <div class="card bg-primary text-white">
+                <!-- Statistics -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card text-center bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Total Patients</h5>
-                                <h2 class="display-6">0</h2>
+                                <h3 class="text-primary">12</h3>
+                                <p class="card-text">Total Patients</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-3 mb-3">
-                        <div class="card bg-success text-white">
+                    <div class="col-md-3">
+                        <div class="card text-center bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Today's Sessions</h5>
-                                <h2 class="display-6">0</h2>
+                                <h3 class="text-warning">5</h3>
+                                <p class="card-text">Pending Matches</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-3 mb-3">
-                        <div class="card bg-warning text-white">
+                    <div class="col-md-3">
+                        <div class="card text-center bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">Pending Requests</h5>
-                                <h2 class="display-6">0</h2>
+                                <h3 class="text-success">7</h3>
+                                <p class="card-text">Active Sessions</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-3 mb-3">
-                        <div class="card bg-info text-white">
+                    <div class="col-md-3">
+                        <div class="card text-center bg-light">
                             <div class="card-body">
-                                <h5 class="card-title">This Month</h5>
-                                <h2 class="display-6">0</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <!-- Today's Schedule -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Today's Schedule</h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-muted">No appointments scheduled for today.</p>
-                                <a href="#" class="btn btn-outline-success btn-sm">View Full Calendar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Recent Patient Activity -->
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Recent Patient Activity</h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="text-muted">No recent patient activity to show.</p>
-                                <a href="#" class="btn btn-outline-primary btn-sm">View All Patients</a>
+                                <h3 class="text-info">95%</h3>
+                                <p class="card-text">AI Accuracy</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Profile Information -->
+                <!-- Patient Matches -->
                 <div class="row">
                     <div class="col-12">
+                        <h4 class="mb-3">
+                            <i class="bi bi-people me-2"></i>Your Matched Patients
+                            <small class="text-muted">(AI-Generated Summaries)</small>
+                        </h4>
+                    </div>
+                </div>
+
+                <!-- Patient Cards -->
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
                         <div class="card">
-                            <div class="card-header">
-                                <h5>Your Professional Profile</h5>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0">Sarah Johnson</h6>
+                                    <small class="text-muted">sarah.j@email.com</small>
+                                </div>
+                                <div>
+                                    <span class="badge bg-warning">Pending</span>
+                                    <button class="btn btn-sm btn-outline-secondary ms-2" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#patient1" aria-expanded="false">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p><strong>Name:</strong> <span th:text="${therapist.name}"></span></p>
-                                        <p><strong>Email:</strong> <span th:text="${therapist.email}"></span></p>
-                                        <p><strong>Specialty:</strong> <span
-                                                th:text="${therapist.specialty ?: 'Not specified'}"></span></p>
+                            <div class="collapse" id="patient1">
+                                <div class="card-body">
+                                    <div class="alert alert-info">
+                                        <small><i class="bi bi-robot me-1"></i>AI-Generated Summary</small>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p><strong>Availability:</strong> <span
-                                                th:text="${therapist.availability ?: 'Not specified'}"></span></p>
-                                        <p><strong>Member Since:</strong> Today</p>
-                                        <p><strong>Account Type:</strong> Licensed Therapist</p>
+                                    <p><strong>Detected Issues:</strong> Anxiety, Work-related stress</p>
+                                    <p><strong>Journal Entries:</strong> 15 entries in the last month</p>
+                                    <p><strong>Key Patterns:</strong> Shows high engagement with self-reflection,
+                                        mentions difficulty with work-life balance</p>
+                                    <div class="mt-3">
+                                        <button class="btn btn-success btn-sm me-2">
+                                            <i class="bi bi-check me-1"></i>Accept Patient
+                                        </button>
+                                        <button class="btn btn-outline-primary btn-sm">
+                                            <i class="bi bi-eye me-1"></i>View Profile
+                                        </button>
                                     </div>
                                 </div>
-                                <a href="#" class="btn btn-outline-success">Edit Profile</a>
-                                <a href="#" class="btn btn-outline-primary">Update Availability</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0">Michael Chen</h6>
+                                    <small class="text-muted">m.chen@email.com</small>
+                                </div>
+                                <div>
+                                    <span class="badge bg-success">Active</span>
+                                    <button class="btn btn-sm btn-outline-secondary ms-2" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#patient2" aria-expanded="false">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="collapse" id="patient2">
+                                <div class="card-body">
+                                    <div class="alert alert-info">
+                                        <small><i class="bi bi-robot me-1"></i>AI-Generated Summary</small>
+                                    </div>
+                                    <p><strong>Detected Issues:</strong> Depression, Social isolation</p>
+                                    <p><strong>Journal Entries:</strong> 22 entries in the last month</p>
+                                    <p><strong>Key Patterns:</strong> Regular journaling shows commitment,
+                                        mentions loneliness and social difficulties</p>
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary btn-sm me-2">
+                                            <i class="bi bi-calendar me-1"></i>Schedule Session
+                                        </button>
+                                        <button class="btn btn-outline-info btn-sm">
+                                            <i class="bi bi-journal me-1"></i>Session Notes
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0">Emily Rodriguez</h6>
+                                    <small class="text-muted">emily.r@email.com</small>
+                                </div>
+                                <div>
+                                    <span class="badge bg-success">Active</span>
+                                    <button class="btn btn-sm btn-outline-secondary ms-2" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#patient3" aria-expanded="false">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="collapse" id="patient3">
+                                <div class="card-body">
+                                    <div class="alert alert-info">
+                                        <small><i class="bi bi-robot me-1"></i>AI-Generated Summary</small>
+                                    </div>
+                                    <p><strong>Detected Issues:</strong> Anxiety, Sleep disorders</p>
+                                    <p><strong>Journal Entries:</strong> 8 entries in the last month</p>
+                                    <p><strong>Key Patterns:</strong> Night-time anxiety, sleep quality concerns</p>
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary btn-sm me-2">
+                                            <i class="bi bi-calendar me-1"></i>Schedule Session
+                                        </button>
+                                        <button class="btn btn-outline-info btn-sm">
+                                            <i class="bi bi-bar-chart me-1"></i>Progress Report
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0">David Thompson</h6>
+                                    <small class="text-muted">d.thompson@email.com</small>
+                                </div>
+                                <div>
+                                    <span class="badge bg-warning">Pending</span>
+                                    <button class="btn btn-sm btn-outline-secondary ms-2" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#patient4" aria-expanded="false">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="collapse" id="patient4">
+                                <div class="card-body">
+                                    <div class="alert alert-info">
+                                        <small><i class="bi bi-robot me-1"></i>AI-Generated Summary</small>
+                                    </div>
+                                    <p><strong>Detected Issues:</strong> Stress, Relationship concerns</p>
+                                    <p><strong>Journal Entries:</strong> 12 entries in the last month</p>
+                                    <p><strong>Key Patterns:</strong> Communication difficulties, relationship conflicts
+                                    </p>
+                                    <div class="mt-3">
+                                        <button class="btn btn-success btn-sm me-2">
+                                            <i class="bi bi-check me-1"></i>Accept Patient
+                                        </button>
+                                        <button class="btn btn-outline-primary btn-sm">
+                                            <i class="bi bi-eye me-1"></i>View Profile
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Quick Actions -->
-                <div class="row mt-4">
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Add New Patient</h5>
-                                <p class="card-text">Add a new patient to your practice.</p>
-                                <a href="#" class="btn btn-primary">Add Patient</a>
-                            </div>
-                        </div>
+                <!-- AI Insights Panel -->
+                <div class="card mt-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="bi bi-bar-chart me-2"></i>AI Insights & Analytics
+                        </h5>
                     </div>
-
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Schedule Appointment</h5>
-                                <p class="card-text">Schedule a new appointment with a patient.</p>
-                                <a href="#" class="btn btn-success">Schedule</a>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Most Common Issues Detected:</h6>
+                                <ul class="list-unstyled">
+                                    <li>• Anxiety disorders (35%)</li>
+                                    <li>• Depression (28%)</li>
+                                    <li>• Work-related stress (22%)</li>
+                                    <li>• Relationship concerns (15%)</li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Patient Notes</h5>
-                                <p class="card-text">Review and update patient session notes.</p>
-                                <a href="#" class="btn btn-info">View Notes</a>
+                            <div class="col-md-6">
+                                <h6>AI Recommendation Accuracy:</h6>
+                                <ul class="list-unstyled">
+                                    <li>• Patient-Therapist match satisfaction: 94%</li>
+                                    <li>• Issue detection accuracy: 91%</li>
+                                    <li>• Treatment success rate: 87%</li>
+                                    <li>• Patient engagement improvement: 76%</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
